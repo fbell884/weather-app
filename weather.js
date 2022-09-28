@@ -25,17 +25,11 @@ var timeMobile = document.getElementById("time-mobile");
 timePara.innerHTML = hourMin;
 timeMobile.innerHTML = hourMin;
 
-const APIKey = process.env.WEATHER_API_KEY;
-console.log(APIKey);
-
 // Get Weather Data
 function getData() {
 
     var zipCode = document.getElementById('zipcode').value;
-    // const APIKey = process.env.WEATHER_API_KEY;
-    // console.log(APIKey);
-
-    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${APIKey}&units=imperial`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=4c4bf9966171c40dc8fc61454992bf5f&units=imperial`;
 
     // fetch weather data
     fetch(url, {
