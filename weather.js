@@ -29,7 +29,9 @@ timeMobile.innerHTML = hourMin;
 function getData() {
 
     var zipCode = document.getElementById('zipcode').value;
-    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=4c4bf9966171c40dc8fc61454992bf5f&units=imperial`;
+    var APIKey = process.env.WEATHER_API_KEY;
+
+    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${APIKey}&units=imperial`;
 
     // fetch weather data
     fetch(url, {
