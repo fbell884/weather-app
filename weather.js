@@ -15,7 +15,6 @@ const hourMin = date.toLocaleTimeString('en-US', {
     minute: '2-digit',
   });
 
-console.log(time);
 
 var timePara = document.getElementById("time");
 var timeMobile = document.getElementById("time-mobile");
