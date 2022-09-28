@@ -6,10 +6,14 @@ var minEl = document.getElementById("min");
 var maxEl = document.getElementById("max");
 var cityEl = document.getElementById("city");
 var weatherImgEl = document.getElementById("weather-img");
+var sunriseEl = document.getElementById("riseTime");
+var sunsetEl = document.getElementById("sunsetTime");
+var windSpdEl = document.getElementById("windSpeed");
+var humidityEl = document.getElementById("humidPercent");
 
-// get time 
+// get current time 
 var date = new Date();
-const hourMin = date.toLocaleTimeString('en-US', {
+var hourMin = date.toLocaleTimeString('en-US', {
     // en-US can be set to 'default' to use user's browser settings
     hour: '2-digit',
     minute: '2-digit',
@@ -36,9 +40,7 @@ function getData() {
 
     // Get Image Code & replace image
     var imgCode = json.weather[0].icon;
-    console.log(imgCode);
     var imgURL = `https://openweathermap.org/img/wn/${imgCode}@2x.png`;
-    console.log(imgURL);
 
     switch (imgCode) {
         case "01d":
@@ -99,7 +101,7 @@ function getData() {
 
     // Update Temp
      var temp = json.main.temp;
-     tempElement.innerHTML = temp + "&deg";
+     tempElement.innerHTML = temp + "&degF";
     
     // Update Weather Description
      var desc = json.weather[0].description;
@@ -114,7 +116,38 @@ function getData() {
      var max = json.main.temp_max;
      maxEl.innerHTML = max;
 
-        
+    // Update Sunrise Time 
+    var sunrise = json.sys.sunrise;
+    sunrise = sunrise * 1000;
+    var sunriseObj = new Date (sunrise);
+    sunrise = sunriseObj.toLocaleTimeString('en-US', {
+        // en-US can be set to 'default' to use user's browser settings
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+      sunriseEl.innerHTML = sunrise;
+
+    // Update Sunset Time
+    var sunset = json.sys.sunset;
+    sunset = sunset * 1000;
+    var sunsetObj = new Date (sunset);
+    sunset = sunsetObj.toLocaleTimeString('en-US', {
+        // en-US can be set to 'default' to use user's browser settings
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
+    sunsetEl.innerHTML = sunset;
+
+    // Update Wind Speed 
+    var windSpeed = json.wind.speed;
+    windSpdEl.innerHTML = windSpeed;
+
+    // Update Humidity Percentage
+    var humidityPercentage = json.main.humidity;
+    humidityEl.innerHTML = humidityPercentage;
+
 
     }).catch(function(error) {
         console.log("Please Enter a Valid Zip Code");
