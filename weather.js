@@ -43,9 +43,52 @@ function getData() {
     switch (imgCode) {
         case "01d":
             weatherImgEl.src = "images/sunny.png";
+            weatherImgEl.alt = "image of sun.";
+            break;
+        case "01n":
+            weatherImgEl.src = "images/crescent-moon.png";
+            weatherImgEl.alt = "image of crescent-moon";
+            break;
+        case "02d":
+            weatherImgEl.src = "images/day-partly-cloud.png";
+            weatherImgEl.alt = "image of sun within clouds";
+            break;
+        case "02n":
+            weatherImgEl.src = "images/night-partly-cloudy.png";
+            weatherImgEl.alt = "image of moon within clouds";
+            break;
+        case "03d": 
+        case "03n":
+        case "04d":
+        case "04n":
+            weatherImgEl.src = "images/cloudy.png";
+            weatherImgEl.alt = "image of cloud.";
+            break;
+        case "09d":
+        case "09n":
+        case "10d":
+        case "10n":
+            weatherImgEl.src = "images/rain.png";
+            weatherImgEl.alt = "image of rain coming down from clouds";
+            break;
+        case "11d":
+        case "11n":
+            weatherImgEl.src = "images/thunderstorm.png";
+            weatherImgEl.alt = "image of dark clouds with thunderbolts";
+            break;
+        case "13d":
+        case "13n":
+            weatherImgEl.src = "images/snow.png";
+            weatherImgEl.alt = "image of snowflakes falling";
+            break;
+        case "50d":
+        case "50n":
+            weatherImgEl.src = "images/fog.png";
+            weatherImgEl.alt = "image of cloud with fog";
             break;
         default: 
             weatherImgEl.src = imgURL;
+            weatherImgEl.alt = json.weather[0].description;
             break;
     }
     
