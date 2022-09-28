@@ -2,6 +2,38 @@
 
 body {
     height: 100vh;
+    font-family: "Oswald";
+}
+
+.more-weather-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    border-collapse: separate !important;
+    border: 1px solid #265889;
+    background-color: #265889;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 80%;
+    }
+}
+
+.footer {
+    padding: 3rem 0 3rem 0;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer .social-icon {
+    margin: 0 1% 1% 1%;
 }
 
 .navbar-toggler {
@@ -9,7 +41,7 @@ body {
 }
 
 .weather-widget {
-    border-radius: 4px;
+    /* border-radius: 4px; */
     /* background: linear-gradient(to bottom, #9be2fe 0%,#67d1fb 100%); */
     box-shadow: 2px 5px 10px 0 rgb(0 0 0 / 50%);
     color: white;
@@ -18,8 +50,12 @@ body {
 
 @media screen and (max-width: 576px) {
     .weather-widget {
-        height: 100vh;
+        min-height: 100vh;
         border-radius: 0;
+    }
+
+    table {
+        font-size: 0.875rem;
     }
 
 }
@@ -42,7 +78,7 @@ body {
 }
 
 #temp {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
 }
 
 .form-control {

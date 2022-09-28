@@ -4,17 +4,21 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Francis' Forecast</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/9ff19ce904.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&family=Sacramento&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="weather.css">
     </head>
     <body>
-        <div class="container gx-0">
+        <div class="container-fluid gx-0">
             <div class="row gx-0 justify-content-center weather-start">
-                <div class="col-12 col-md-8 col-lg-6 mt-sm-5">
+                <div class="col-12">
                     <!-- <h1 class="text-center">Weather</h1> -->
                     <div class="w-100 weather-widget sky-gradient-14">
                         <div class="weather-content pb-5 pt-4 pt-sm-2">
@@ -35,11 +39,34 @@
                                 </div>
                               </nav>
                             <p id="time" class="d-none d-md-block"></p>
-                            <h2 id="city" class="text-center pt-4 pt-4">Philadelphia</h2>
-                            <p id="skies" class="text-center m-0">Clear Skies</p>
+                            <h2 id="city" class="text-center pt-4 pt-4">Francis' Forecast</h2>
+                            <p id="skies" class="text-center m-0">Enter Zip Code to Get Your Weather :)</p>
                             <img id="weather-img" class="mx-auto pt-4 pb-4 weather-image" src="images/sunny.png">
                             <p id="temp" class="text-center">73&degF</p>
-                            <p class="text-center">Min: <span id="min">58</span>&degF &nbsp &nbsp Max: <span id="max">73</span>&degF</p>
+                            <p class="text-center">Low: <span id="min">58</span>&degF &nbsp &nbsp High: <span id="max">73</span>&degF</p>
+                        </div>
+                        <div class="more-weather d-flex justify-content-center">
+                          <table class="more-weather-table">
+                            <tr>
+                              <td>Sunrise/Sunset: </td>
+                              <td><span id="riseTime">07:15 AM</span>/<span id="sunsetTime">08:15 PM</span></td>
+                            </tr>
+                            <tr>
+                              <td>Wind Speed: </td>
+                              <td><span id="windSpeed">8</span> MPH</td>
+                            </tr>
+                            <tr>
+                              <td>Humidity (%): </td>
+                              <td><span id="humidPercent">60</span> %</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="text-center footer">
+                          <a href="https://twitter.com/coolfactbot"><span class="fa-brands fa-twitter social-icon"></span></a>
+                          <!-- <span class="fa-brands fa-facebook-f social-icon"></span> -->
+                          <a href="https://www.linkedin.com/in/francis-bell/"><span class="fa-brands fa-linkedin social-icon"></span></a>
+                          <a href="mailto:fbell884.testing@gmail.com"><span class="fa-solid fa-envelope social-icon"></span></a>
+                          <p>Socials & Email</p>
                         </div>
                     </div>
                 </div>
