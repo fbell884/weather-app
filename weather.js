@@ -10,6 +10,7 @@ var sunriseEl = document.getElementById("riseTime");
 var sunsetEl = document.getElementById("sunsetTime");
 var windSpdEl = document.getElementById("windSpeed");
 var humidityEl = document.getElementById("humidPercent");
+const apiKey = process.env.WEATHER_API_KEY;
 
 // get current time 
 var date = new Date();
@@ -29,7 +30,7 @@ timeMobile.innerHTML = hourMin;
 function getData() {
 
     var zipCode = document.getElementById('zipcode').value;
-    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=4c4bf9966171c40dc8fc61454992bf5f&units=imperial`;
+    var url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=imperial`;
 
     // fetch weather data
     fetch(url, {
